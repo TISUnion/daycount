@@ -20,4 +20,4 @@ def getday():
   return str(output.days)
 
 def on_load(server, old):
-  server.add_help_message('!!day', '显示今天是开服第几天')
+  server.register_help_message('!!day', '显示今天是开服第几天')
