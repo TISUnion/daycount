@@ -2,6 +2,14 @@
 import copy
 import datetime
 
+PLUGIN_METADATA={
+  "id":"daycount",
+  "version":"1.0.0",
+  "name":"Daycount",
+  "author":"Fallen-Breath",
+  "link":"https://github.com/TISUnion/daycount"
+}
+
 startday = datetime.datetime.strptime('2018-11-09', '%Y-%m-%d')
 
 def onServerInfo(server, info):
@@ -20,4 +28,7 @@ def getday():
   return str(output.days)
 
 def on_load(server, old):
-  server.add_help_message('!!day', '显示今天是开服第几天')
+  try:
+    server.add_help_message('!!day', '显示今天是开服第几天')
+  except:
+    server.register_help_message('!!day', '显示今天是开服第几天')
